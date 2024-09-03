@@ -1,0 +1,59 @@
+.login{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+.dalla-login{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #002147;
+}
+.picture-logo{
+    margin-top: 10px;
+    width: 50px;
+    border-radius: 100%;
+}
+.box{
+    margin-bottom: 20px;
+}
+.i-user, .i-pass{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.img-logo, .box, .box2{
+    display: flex;
+    justify-content: center;
+}
+
+.h1{
+    color: #ffff;
+    font-size: 15px;
+    text-align: center;
+}
+.botton, .rem{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.chuchu{
+    color: #ffffff;
+}
+.bxs-user, .bxs-lock-alt{
+    color: #ffffff;
+}
+.btn{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    border-style: solid;
+    font-weight: bold;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: #00ff00;
+    color: #ffffff;
+}

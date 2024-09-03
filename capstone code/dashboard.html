@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<body>
+    <header class="dashboard-header">
+       
+        <!-- this is for header -->
+        <div class="grid-header">
+               <div>
+                <img src="img/logo.jpg" class="logo-header" alt="">
+               </div>
+                    
+                <div class="BDAMS">
+                    <p>Barangay Dalla Attendance Monitoring System</p>
+                </div>
+                
+                <div>
+                    <i class='bx bx-bell bx-tada' ></i>    
+                </div>
+        </div>
+           
+                   
+    </header>
+
+    <!-- this is sidebar navigation -->
+  
+    <div class="sidebar" >
+        <div class="top">
+            <div class="logo">
+            <p>Sidebar Menu</p>
+            </div>
+            <i class="bx bx-menu" id="btn" >
+            </i>
+        </div>
+       
+        <ul>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="nav-item">Dashboard</span>
+                </a>
+                <span class="tool-tip" >Dashboard</span>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class='bx bx-user-check'></i>
+                    <span class="nav-item">Attendance</span>
+                </a>
+                <span class="tool-tip" >Attendance</span>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class='bx bxs-folder-open'></i>
+                    <span class="nav-item">Records</span>
+                </a>
+                <span class="tool-tip" >Records</span>
+            </li>
+            
+            <li>
+                <a href="residents.php">
+                    <i class='bx bx-list-ul' ></i>
+                    <span class="nav-item">Residents</span>
+                </a>
+                <span class="tool-tip" >Residents</span>
+            </li>
+
+            <li>
+                <div class="logout">
+                    <a href="#">
+                        <i class='bx bx-log-out' ></i>
+                        <span class="nav-item">Logout</span>
+                    </a>
+                    <span class="tool-tip" >Logout</span>
+                </div>
+                
+            </li>
+        </ul>
+    </div>
+
+    <!-- the main content -->
+
+    <div class="main-content" >
+        <!-- admin and events grid-->
+         <div class="dashboard">
+            <!-- admin profile -->
+            <div class="admin-profile">
+                <div>
+                    <p class="profile-p">Profile</p>
+                </div>
+
+                <div class="admin-pic">
+                    <img src="img/user.png" class="admin-img">
+                </div>
+                <div class="flex-padmin">
+                    <p>Admin</p>
+                </div>
+                <div class="flex-botton">
+                    <button class="edit-botton">
+                        <i class='bx bxs-edit'></i>
+                        edit
+                    </button>
+                </div>
+            </div>
+
+            <div class="events">
+                <div class="grid-inside">
+                   <a href="cleanup_drive.php">
+                        <div class="g1">
+                            <p class="p-event">
+                                Clean-up Drive
+                            </p>
+                            <div class="flex-img">
+                                <img class="img1" src="img/Volunteers cleaning up garbage in city park .jpg" >
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <div class="g1">
+                        <p class="p-event">
+                            Senior Citizens
+                        </p>
+                        <div class="flex-img">
+                            <img class="img2" src="img/5527.jpg" >
+                        </div>
+                    </div>
+
+                    <div class="g1">
+                        <p class="p-event">
+                           Tree Planting
+                        </p>
+                        <div class="flex-img">
+                            <img class="img3" src="img/6399728.jpg" >
+                        </div>
+                    </div>
+
+                    <div class="g1">
+                        <p class="p-event">
+                           Purok Meeting
+                        </p>
+                        <div class="flex-img">
+                            <img class="img4" src="img/6101073.jpg" >
+                        </div>
+                    </div>
+
+                    <div class="g1">
+                        <p class="p-event">
+                           SK Officials
+                        </p>
+                        <div class="flex-img">
+                            <img class="img5" src="img/2206.q713.011.F.m012.c7.people top view flat.jpg" >
+                        </div>
+                    </div>
+                </div>
+                <div class="g1">
+                    <p class="p-event">
+                       Tupad
+                    </p>
+                    <div class="flex-img">
+                        <img class="img6" src="img/tupad.jpg" >
+                    </div>
+                </div>
+            </div>
+
+         </div>
+         <div class="hgrid">
+            <div class="bar-graph">
+                <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    
+        <script>
+    var xValues = ["CLEAN-UP DRIVE", "SENIOR CITIZENTS", "Tree Planting",];
+    var yValues = [55, 49, 44, 24,];
+    var barColors = ["red", "green","blue","orange"];
+    
+    new Chart("myChart", {
+      type: "bar",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        legend: {display: false},
+        title: {
+          display: true,
+          text: "barangay dalla overall attendance"
+        }
+      }
+    });
+        </script>
+       
+            </div>
+            <div class="schedule">
+                <p class="p-sched">SCHEDULE</p>
+                <div>
+                    <img class="img-sched" src="img/3871356.jpg" >
+                </div>
+            </div>
+            
+         </div>
+        
+       
+     
+        
+    </div>
+</body>
+
+<!-- this for sidebar script -->
+
+<script>
+    let btn = document.querySelector('#btn');
+    let sidebar = document.querySelector('.sidebar');
+
+    btn.onclick = function() {
+        sidebar.classList.toggle('active');
+    };
+</script>
+</html>
